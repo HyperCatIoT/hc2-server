@@ -1,0 +1,31 @@
+{
+  "name": "hypercat-ref",
+  "version": "1.0.0",
+  "description": "HyperCat Server",
+  "main": "lib/main.js",
+  "dependencies": {
+    "body-parser": "^1.12.0",
+    "cors": "^2.6.0",
+    "express": "^4.12.3",
+    "URIjs": "~1.10.2",
+    "request": "^2.58.0"
+  },
+  "devDependencies": {
+    "eslint": "^0.23.0",
+    "matchdep": "~0.3.0",
+    "mocha": "^2.2.1",
+    "chai": "^2.2.0",
+    "chai-as-promised": "^4.3.0",
+    "chai-http": "^1.0.0",
+    "mocha-eslint": "^0.1.7",
+    "loadtest": "^1.2.11"
+  },
+  "peerDependencies": {
+  },
+  "author": "1248 Ltd. <info@1248.io>",
+  "scripts": {
+    "start": "node lib/main.js",
+    "test": "mocha --recursive -t 20000 -s 1000 test/unit test/api",
+    "eslint": "node_modules/eslint/bin/eslint.js lib test"
+  }
+}

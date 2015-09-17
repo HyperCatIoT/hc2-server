@@ -1,0 +1,168 @@
+{
+    "item-metadata": [
+        {
+            "val": "application/vnd.hypercat.catalogue+json",
+            "rel": "urn:X-hypercat:rels:isContentType"
+        },
+        {
+            "val": "Hypercat Reference - City Energy Data",
+            "rel": "urn:X-hypercat:rels:hasDescription:en"
+        },
+        {
+            "val": "urn:X-hypercat:search:simple",
+            "rel": "urn:X-hypercat:rels:supportsSearch"
+        }
+    ],
+    "items": [
+        {
+            "i-object-metadata": [
+                {
+                    "val": "London",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "51.5072",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+                },
+                {
+                    "val": "0.1275",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+                },
+                {
+                    "val": "2010-03-01T13:00:00Z",
+                    "rel": "lastUpdated"
+                },
+                {
+                    "val": "81735",
+                    "rel": "uniqueId"
+                }
+            ],
+            "href": "/london"
+        },
+        {
+            "i-object-metadata": [
+                {
+                    "val": "New York",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "40.7127",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+                },
+                {
+                    "val": "-74.0059",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+                },
+                {
+                    "val": "2009-05-01T13:00:00Z",
+                    "rel": "lastUpdated"
+                },
+                {
+                    "val": "76124",
+                    "rel": "uniqueId"
+                }
+            ],
+            "href": "/newyork"
+        },
+        {
+            "i-object-metadata": [
+                {
+                    "val": "Toronto",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "43.7000",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+                },
+                {
+                    "val": "-79.4000",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+                },
+                {
+                    "val": "2005-05-01T13:00:00Z",
+                    "rel": "lastUpdated"
+                },
+                {
+                    "val": "17249",
+                    "rel": "uniqueId"
+                }
+            ],
+            "href": "/toronto"
+        },
+        {
+            "i-object-metadata": [
+                {
+                    "val": "Tokyo",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "35.6833",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+                },
+                {
+                    "val": "139.6833",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+                },
+                {
+                    "val": "2015-07-01T13:00:00Z",
+                    "rel": "lastUpdated"
+                },
+                {
+                    "val": "90126",
+                    "rel": "uniqueId"
+                }
+            ],
+            "href": "/tokyo"
+        },
+        {
+            "i-object-metadata": [
+                {
+                    "val": "Dubai",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "25.2048",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+                },
+                {
+                    "val": "55.2708",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+                },
+                {
+                    "val": "2006-06-13T13:00:00Z",
+                    "rel": "lastUpdated"
+                },
+                {
+                    "val": "45679",
+                    "rel": "uniqueId"
+                }
+            ],
+            "href": "/dubai"
+        },
+        {
+            "i-object-metadata": [
+                {
+                    "val": "Suva",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "-18.1416",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+                },
+                {
+                    "val": "178.4419",
+                    "rel": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+                },
+                {
+                    "val": "2015-01-09T13:00:00Z",
+                    "rel": "lastUpdated"
+                },
+                {
+                    "val": "87230",
+                    "rel": "uniqueId"
+                }
+            ],
+            "href": "/suva"
+        }
+    ]
+}

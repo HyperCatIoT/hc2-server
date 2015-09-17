@@ -1,0 +1,13 @@
+{
+    "item-metadata": [
+        {
+            "val": "application/vnd.hypercat.catalogue+json",
+            "rel": "urn:X-hypercat:rels:isContentType"
+        },
+        {
+            "val": "Empty Catalogue",
+            "rel": "urn:X-hypercat:rels:hasDescription:en"
+        }
+    ],
+    "items": []
+}

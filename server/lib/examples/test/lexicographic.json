@@ -1,0 +1,65 @@
+{
+    "item-metadata": [
+        {
+            "val": "application/vnd.hypercat.catalogue+json",
+            "rel": "urn:X-hypercat:rels:isContentType"
+        },
+        {
+            "val": "Empty Catalogue",
+            "rel": "urn:X-hypercat:rels:hasDescription:en"
+        }
+    ],
+    "items": [
+        {
+            "i-object-metadata": [
+                {
+                    "val": "",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "date",
+                    "rel": "createdDate"
+                },
+                {
+                    "val": "date2",
+                    "rel": "updatedDate"
+                }
+            ],
+            "href": "/first"
+        },
+        {
+            "i-object-metadata": [
+                {
+                    "val": "",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "2007-03-01T13:00:00Z",
+                    "rel": "createdDate"
+                },
+                {
+                    "val": "2009-03-01T11:00:00Z",
+                    "rel": "updatedDate"
+                }
+            ],
+            "href": "/second"
+        },
+        {
+            "i-object-metadata": [
+                {
+                    "val": "",
+                    "rel": "urn:X-hypercat:rels:hasDescription:en"
+                },
+                {
+                    "val": "1990-01-12T02:00:00Z",
+                    "rel": "createdDate"
+                },
+                {
+                    "val": "2015-09-20T13:00:00Z",
+                    "rel": "updatedDate"
+                }
+            ],
+            "href": "/third"
+        }
+    ]
+}
