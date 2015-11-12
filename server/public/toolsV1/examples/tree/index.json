@@ -1,0 +1,41 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"root"
+        }
+    ],
+    "items":[
+        {
+            "href":"/examples/tree/a.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"Link to Sub-Catalogue A"
+                }
+            ]
+        },
+        {
+            "href":"/examples/tree/b.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"Link to Sub-Catalogue B"
+                }
+            ]
+        }
+
+    ]
+}

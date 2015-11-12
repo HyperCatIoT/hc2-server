@@ -1,0 +1,18 @@
+<div class="hypercat-select">
+    <h4>HyperCat Selection</h4>
+    <form ng-submit="updateUrl()">
+        <label>
+            <input type="radio" name="catType" value="default" ng-model="catType" ng-change="updateUrl()">
+            <span>Example HyperCat</span>
+        </label>
+        <label>
+            <input type="radio" name="catType" value="custom" ng-model="catType" ng-change="updateUrl()">
+            <span>My HyperCat</span><br>
+            <input type="text" size="40" placeholder="http://example.com/cat"
+                   ng-model="customUrl"
+                   ng-click="selectCustom()"
+                   ng-change="updateUrl()">
+        </label>
+    </form>
+    <a href="#/editor" class="btn active" style="margin-bottom: 10px; display: inline-block;" ng-if="editorEnabled">Open Item Editor</a>
+</div>

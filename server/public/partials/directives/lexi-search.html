@@ -1,0 +1,51 @@
+<div class="simple-search">
+    <form ng-submit="updateQuery()">
+        <div class="series-input">
+            <label>
+                <span>rel:</span>
+                <input type="text" ng-model="data.value['lexrange-rel']" ng-change="updateQuery()" ng-trim="false">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>minimum:</span>
+                <input type="text" ng-model="data.value['lexrange-min']" ng-change="updateQuery()">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>maximum:</span>
+                <input type="text" ng-model="data.value['lexrange-max']" ng-change="updateQuery()">
+            </label>
+        </div>
+
+        <label style="display:inline-block; float: right; text-align: right;">
+            <input type="checkbox" ng-model="usingDates">
+            <span>Use Date Fields</span>
+        </label>
+
+        <div class="dates" ng-if="usingDates">
+            <div class="series-input">
+                <label>
+                    <span>start:</span>
+                    <input type="date" data-format="dd/MM/yyyy" placeholder="dd/mm/yyyy" ng-model="dates.start" ng-change="updateDate('start')">
+                </label>
+            </div>
+            <div class="series-input">
+                <label>
+                    <span>end:</span>
+                    <input type="date" data-format="dd/MM/yyyy" placeholder="dd/mm/yyyy" ng-model="dates.end" ng-change="updateDate('end')">
+                </label>
+            </div>
+        </div>
+
+        <label style="display:inline-block; float: right; clear: right;">
+            <input type="checkbox" ng-model="usingFilter" ng-change="toggle()">
+            <span>Use LexicographicSearch?</span>
+        </label>
+
+        <span class="notes">Dates will be formatted as ISO 8601</span>
+
+        <!--<input type="submit" value="Use Query Parameters" class="btn active right">-->
+    </form>
+</div>

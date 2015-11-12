@@ -1,0 +1,35 @@
+{
+  "name": "angular-json-pretty",
+  "version": "1.0.0",
+  "homepage": "https://github.com/leftstick/angular-json-pretty",
+  "description": "A directive make json object or string printed in human readable way",
+  "main": [
+    "./dist/angular-json-pretty.min.js",
+    "./dist/angular-json-pretty.min.css"
+  ],
+  "keywords": [
+    "angular",
+    "directive",
+    "json"
+  ],
+  "authors": [
+    "Howard.Zuo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "~1.3.5"
+  },
+  "devDependencies": {
+    "amazeui": "2.0.0-beta1",
+    "animate.css": "~3.2.0"
+  }
+}

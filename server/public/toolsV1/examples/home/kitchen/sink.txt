@@ -1,0 +1,2 @@
+This is a text resource describing the kitchen sink.
+It is ceramic.

@@ -1,0 +1,25 @@
+.collapsible {
+    background: rgba(0, 0, 0, 0.2);
+    margin: 10px 0 0 0;
+    position: relative;
+    h4 {
+        padding: 10px 0 10px 10px;
+        width: 90%;
+        margin-bottom: 0;
+    }
+    a.toggle {
+        color: #fff;
+        position: absolute;
+        padding: 5px 10px 5px 10px;
+        top: 0;
+        right: 0;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    .query-builder-inner {
+        padding: 0 !important;
+        &.visible {
+            padding: 10px !important;
+        }
+    }
+}

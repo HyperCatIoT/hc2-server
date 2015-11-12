@@ -1,0 +1,40 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"all sensors in deployment"
+        }
+    ],
+    "items":[
+        {
+            "href":"/examples/sensors/powermonitor.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"power monitor"
+                }
+            ]
+        },
+        {
+            "href":"/examples/sensors/temperaturemonitor.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"temperature monitor"
+                }
+            ]
+        }
+    ]
+}

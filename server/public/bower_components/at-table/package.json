@@ -1,0 +1,26 @@
+{
+  "name": "angular-table",
+  "version": "1.0.4",
+  "author": "Samuel Mueller",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samu/angular-table.git"
+  },
+  "devDependencies": {
+    "bower": "~1.3.3",
+    "grunt": "~0.4.1",
+    "grunt-banner": "~0.2.1",
+    "grunt-cli": "~0.1.8",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-uglify": "~v0.3.3",
+    "karma": "~0.12",
+    "karma-coffee-preprocessor": "^0.2.1",
+    "karma-jasmine": "^0.1.5",
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "karma-phantomjs-launcher": "^0.1.4"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+  }
+}

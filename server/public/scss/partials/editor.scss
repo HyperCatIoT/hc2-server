@@ -1,0 +1,88 @@
+.editor-container {
+    padding: 30px;
+
+    h2 {
+        color: #eee;
+        line-height: 0.9;
+        float: left;
+        font-size: 34px;
+        padding: 3px 0 0 15px;
+    }
+    .back-to-view {
+        float: left;
+        display: inline-block;
+    }
+}
+
+.editor-inner-container {
+    padding: 20px;
+    display: block;
+    background: rgba(0, 0, 0, 0.2);
+    clear: both;
+
+    h5 {
+        color: #56a4f9;
+        line-height: 1.2;
+        font-size: 24px;
+        padding: 20px 0 0 0;
+    }
+
+    h3 {
+        color: #ccc;
+        font-size: 18px;
+        letter-spacing: 1px;
+        span {
+            display: block;
+            font-family: monospace;
+            letter-spacing: 0px;
+        }
+    }
+    textarea {
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        color: rgba(255, 255, 255, 0.6);
+        font-family: monospace;
+        width: 90%;
+        padding: 10px;
+        font-size: 16px;
+        height: 200px;
+        resize: none;
+        -moz-tab-size : 4;
+        -o-tab-size : 4;
+        tab-size : 4;
+        &[disabled] {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+    .btn {
+        display: inline-block;
+        float: left;
+        clear: left;
+        margin-bottom: 5px;
+    }
+
+    .collapsible h4 {
+        color: #ccc;
+        font-size: 16px;
+        letter-spacing: 0;
+    }
+    .collapsible a.toggle {
+        padding-top: 2px;
+    }
+}
+
+.item-list {
+    clear: both;
+    .item {
+        margin: 10px 0 20px 0;
+    }
+    .href {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        padding: 0 0 0 10px;
+    }
+    textarea {
+        white-space: pre;
+        word-wrap: normal;
+    }
+}

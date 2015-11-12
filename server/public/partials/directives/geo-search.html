@@ -1,0 +1,50 @@
+<div class="map" style="max-height: 300px; overflow: hidden; margin-bottom: 10px;">
+    <a href="" ng-click="toggleMap()">{{mapToggleText}}</a>
+    <div ng-if="showMap"
+         ng-click="enablePointerEvents()"
+         ng-mouseleave="disablePointerEvents()">
+        <map center="0, 0" zoom="2"
+            ng-class="{'no-pointer-events': !pointerEvents}"
+            street-view-control="false"
+            disable-default-u-i="true"
+            map-type-control-options="{
+              mapTypeIds: ['ROADMAP'],
+              style: 'DROPDOWN_MENU'
+            }"></map>
+    </div>
+</div>
+
+
+<div class="simple-search">
+    <form ng-submit="updateQuery()">
+        <div class="series-input">
+            <label>
+                <span>minimum latitude:</span>
+                <input type="text" ng-model="data.value['geobound-minlat']" ng-change="updateQuery()">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>maximum latitude:</span>
+                <input type="text" ng-model="data.value['geobound-maxlat']" ng-change="updateQuery()">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>minimum longitude:</span>
+                <input type="text" ng-model="data.value['geobound-minlong']" ng-change="updateQuery()">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>maximum latitude:</span>
+                <input type="text" ng-model="data.value['geobound-maxlong']" ng-change="updateQuery()">
+            </label>
+        </div>
+
+        <label style="display:inline-block; float: right; clear: right;">
+            <input type="checkbox" ng-model="usingFilter" ng-change="toggle()">
+            <span>Use GeoSearch?</span>
+        </label>
+    </form>
+</div>

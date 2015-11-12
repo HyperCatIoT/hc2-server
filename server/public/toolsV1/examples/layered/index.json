@@ -1,0 +1,49 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"High level catalogue"
+        }
+    ],
+    "items":[
+        {
+            "href":"mqtt://broker.com/mypowermonitor?qos=1",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"Andy's power monitor"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:isOwnedBy",
+                    "val":"http://live.dbpedia.org/page/Andy_Stanford-Clark"
+                },
+                {
+                    "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
+                    "val":"-1.4"
+                },
+                {
+                    "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+                    "val":"51.016701"
+                }
+            ]
+        },
+        {
+            "href":"/examples/layered/mypowermonitor-detail.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"Andy's power monitor detail"
+                }
+            ]
+        }
+
+    ]
+}

@@ -1,0 +1,63 @@
+.btn {
+    background: #999;
+    border: none;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 9px 15px;
+    text-transform: none;
+    text-decoration: none;
+    transition: all 0.3s;
+    @include border-radius(3px);
+    @include box-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
+
+    &:hover {
+        color: #fff;
+        @include box-shadow(1px 1px 6px rgba(0, 0, 0, 0.5));
+    }
+
+    &.left {
+        float: left;
+    }
+    &.right {
+        float: right;
+    }
+    &.large {
+        padding: 10px 30px;
+    }
+    &.subfocus {
+        background: #c0c0c0;
+    }
+    &.success {
+        background: #5ab500;
+    }
+    &.active {
+        background: #56a4f9;
+    }
+    &.error {
+        background: darkred;
+    }
+    &.dark {
+        color: #ccc;
+        background: #2A3A49;
+        @include box-shadow(1px 1px 6px rgba(0, 0, 0, 0.1));
+    }
+
+    &.with-icon {
+        overflow: hidden;
+        img {
+            float: left;
+            height: 32px;
+            opacity: 0.6;
+            transition: all 0.2s;
+        }
+        span {
+            line-height: 32px;
+        }
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+    }
+}

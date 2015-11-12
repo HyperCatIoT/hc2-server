@@ -52,6 +52,11 @@ module.exports = (function() {
                     app: app
                 })
             ]).then(function() {
+                // Static front-end serving
+                app.use(express.static(path.join(__dirname, '/../public'),
+                        { maxage: '1d' })
+                );
+
                 // Start listening
                 privates.conn = app.listen(8040);
                 if (!silent) {

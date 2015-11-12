@@ -1,0 +1,253 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript" src="js/URI.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDHADoA_flyLNzUs_W2TxuqF5EtDyZTpxM&sensor=true"></script>
+<script type="text/javascript" src="js/base64.js"></script>
+<script type="text/javascript" src="js/api.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41905116-1', '1248.io');
+ga('send', 'pageview');
+
+</script>
+<script>
+var unexplored = [];
+var explored = [];
+var infoWindows = {};
+var map;
+var markers = [];
+var infowindow = new google.maps.InfoWindow({});
+
+function expandCatalogue(url, doc) {
+    try {
+        // store metadata for catalogue
+        for (var i=0;i<doc['item-metadata'].length;i++) {
+            //console.log("CATL-FACT "+url+" "+doc['item-metadata'][i].rel+" "+doc['item-metadata'][i].val);
+            storeFact({
+                subject: url,
+                predicate: doc['item-metadata'][i].rel,
+                object: doc['item-metadata'][i].val
+            });
+        }
+    } catch(e) {
+        log(e);
+    }
+
+    try {
+        // store metadata for items and expand any catalogues
+        for (var i=0;i<doc.items.length;i++) {
+            var item = doc.items[i];
+            item.href = URI(item.href).absoluteTo(url).toString();    // fixup relative URL
+            // store that catalogue has an item
+            storeFact({
+                subject: url,
+                predicate: "urn:X-tsbiot:rels:hasResource",
+                object: item.href
+            });
+            for (var j=0;j<item['i-object-metadata'].length;j++) {
+                var mdata = item['i-object-metadata'][j];
+                //console.log("ITEM-FACT "+item.href+" "+mdata.rel+" "+mdata.val);
+                storeFact({
+                    subject: item.href,
+                    predicate: mdata.rel,
+                    object: mdata.val
+                });
+
+                // if we find a link to a catalogue, follow it
+                if (mdata.rel == "urn:X-tsbiot:rels:isContentType" &&
+                    mdata.val == "application/vnd.tsbiot.catalogue+json") {
+                        unexplored.push(item.href);
+                }
+            }
+        }
+    } catch(e) {
+        log(e);
+    }
+}
+
+function crawl(cb) {
+    if (unexplored.length > 0) {    // something to explore
+        var url = unexplored.pop();
+
+        if (explored.indexOf(url) == -1) {   // not seen before
+            fetch(url, $('#key').val(), function(err, doc, location) {
+                if (err) {
+                    log("Error in "+url+" ("+err+")");
+                    explored.push(url); // was bad, but explored
+                    crawl(cb);
+                } else {
+                    explored.push(url);
+                    if (location === undefined)
+                        location = url;
+                    expandCatalogue(location, doc);    // parse doc
+                    crawl(cb);    // do some more work
+                }
+            });
+        } else {
+            crawl(cb);  // get next
+        }
+    } else {
+        cb();   // done
+    }
+}
+
+function startcrawl(url) {
+    unexplored.push(url);
+    crawl(function() {
+        log('Crawling complete');
+        plotOnMap(searchForLocations());
+    });
+}
+
+// http://stackoverflow.com/questions/10214873/make-canvas-as-wide-and-as-high-as-parent
+function fitToContainer(canvas){
+    // Make it visually fill the positioned parent
+    canvas.style.width ='100%';
+    canvas.style.height='50%';
+    // ...then set the internal size to match
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+}
+
+
+function initMap() {
+    var myOptions = {
+        center: new google.maps.LatLng(0, 0),
+        zoom: 2,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+}
+
+function createMarker(lat, long, title, contentString, i) {
+    markers[i] = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, long),
+        map: map, 
+        title:title
+    });
+
+    google.maps.event.addListener(markers[i], 'click', function() {
+        infowindow.setContent(contentString);
+        infowindow.open(map, markers[i]);
+    });
+}
+
+function plotOnMap(locs) {
+    for (var i=0;i<locs.length;i++) {
+        contentString = '<table class="attrs">';
+        for (key in locs[i])
+            contentString += '<tr><td><b>'+key+'</b></td><td>'+locs[i][key]+'</td></tr>';
+        contentString += '</table>';
+        createMarker(locs[i].latitude, locs[i].longitude, locs[i]['urn:X-tsbiot:rels:hasDescription:en'], contentString, markers.length);
+    }
+}
+
+
+
+$(document).ready(function() { 
+    var param_url = getQueryVariable('url');
+    var param_key = getQueryVariable('key');
+    if (param_key === undefined)
+        param_key = "";
+
+    $('#key').val(param_key);
+    if (param_url !== undefined) {
+        $('#url').val(param_url);
+        startcrawl($('#url').val());
+    }
+
+    populateExamples();
+
+    initMap();
+    populateExamples();
+
+    $('#examples').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var valueSelected = this.value;
+        $('#url').val(this.value);
+    });
+
+
+    $("#crawl").click(function() {
+        startcrawl($('#url').val());
+    });
+    $("#clear").click(function() {
+        unexplored = [];
+        explored = [];
+        facts = []; // wipe known facts
+        initMap();
+    });
+});
+
+// returns [{resource:,longitude:,latitude:}]
+function searchForLocations() {
+    var locs = {};
+    for (var i=0;i<facts.length;i++) {
+        if (locs[facts[i].subject] === undefined)
+            locs[facts[i].subject] = {};
+
+        if (facts[i].predicate == "http://www.w3.org/2003/01/geo/wgs84_pos#long")
+            locs[facts[i].subject].longitude = facts[i].object;
+        if (facts[i].predicate == "http://www.w3.org/2003/01/geo/wgs84_pos#lat")
+            locs[facts[i].subject].latitude = facts[i].object;
+        // INSERT LIST OF ALTERNATE ONTOLOGIES
+    }
+    // only return nodes we have long and lat for
+    var ret = [];
+    for (var key in locs) {
+        if (locs[key].longitude !== undefined && locs[key].latitude !== undefined) {
+            var o = {resource:key, longitude:locs[key].longitude, latitude:locs[key].latitude};
+            // fill in any other known properties of this resource
+            for (var i=0;i<facts.length;i++) {
+                if (facts[i].subject == key)
+                    o[facts[i].predicate] = facts[i].object;
+            }
+            ret.push(o);
+        }
+    }
+    return ret;
+}
+
+</script>
+</head>
+
+<body>
+    <a href="http://1248.io"><img src="logo-32x32.png" style="float: right;" border=0></a>
+
+    <h1>Mapping Catalogue Crawler</h1>
+    <p>
+    </p>
+    <p>
+        Select an example catalogue from the box below, or enter the URL of any public catalogue and click "crawl".<br>
+        You may also browse the <a href="examples">example catalogue files</a>. For a description of what each catalogue shows, see <a href="examples/README.txt">examples/README.txt</a>.
+        The "eyehub" and "sensors" catalogues both contain location data</br>
+    </p>
+
+    <p>
+        <form>
+            <select id="examples"></select>
+            URL:&nbsp;<input type="text" id="url" size=80 value="Select example from dropdown or type URL" />
+            Key&nbsp;<input type="password" id="key" size=40 value="" />
+            <input type="button" id="crawl" value="Crawl" />
+            <input type="button" id="clear" value="Clear" />
+        </form>
+    </p>
+
+    <p>
+        The map knows about: "http://www.w3.org/2003/01/geo/wgs84_pos#long" and "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+        <div id="map_canvas" style="width:480px; height:480px;"></div>
+    </p>
+
+    <p>
+        <div id="log"></div>
+    </p>
+</body>
+
+</html>

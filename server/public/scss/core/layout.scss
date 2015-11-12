@@ -1,0 +1,54 @@
+html, body {
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    background: #263238;
+}
+
+.main-content {
+    margin-top: 100px;
+}
+
+.offset-margin {
+    margin-left: 22% !important;
+}
+
+.footer {
+    background: #2E2E2E;
+    height: 75px;
+    p.copyright {
+        font-weight: 300;
+        padding: 25px 0 0 0;
+        float: left;
+        color: #aaa;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+    .hypercat-logo {
+        display: block;
+        float: right;
+    }
+}
+
+.mobile-only {
+    display: block !important;
+}
+
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+}
+
+@media (min-width: 1000px) {
+    .nine.columns {
+        width: 78%;
+    }
+    .mobile-only {
+        display: none !important;
+    }
+}

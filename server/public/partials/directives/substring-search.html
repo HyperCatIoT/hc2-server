@@ -1,0 +1,29 @@
+<div class="simple-search">
+    <form ng-submit="updateQuery()">
+        <div class="series-input">
+            <label>
+                <span>substring rel:</span>
+                <input type="text" ng-model="data.value['substring-rel']" ng-change="updateQuery()" ng-trim="false">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>substring val:</span>
+                <input type="text" ng-model="data.value['substring-val']" ng-change="updateQuery()" ng-trim="false">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>substring href:</span>
+                <input type="text" ng-model="data.value['substring-href']" ng-change="updateQuery()" ng-trim="false">
+            </label>
+        </div>
+
+        <label style="display:inline-block; float: right;">
+            <input type="checkbox" ng-model="usingFilter" ng-change="toggle()">
+            <span>Use SubstringSearch?</span>
+        </label>
+
+        <!--<input type="submit" value="Use Query Parameters" class="btn active right">-->
+    </form>
+</div>

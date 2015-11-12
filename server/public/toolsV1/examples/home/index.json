@@ -1,0 +1,40 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"my home"
+        }
+    ],
+    "items":[
+        {
+            "href":"/examples/home/kitchen/kitchen.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"kitchen catalogue"
+                }
+            ]
+        },
+        {
+            "href":"/examples/home/bedroom/bedroom.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"bedroom catalogue"
+                }
+            ]
+        }
+    ]
+}

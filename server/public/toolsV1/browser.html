@@ -1,0 +1,238 @@
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="css/diQuery-collapsiblePanel.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript" src="js/URI.js"></script>
+<script type="text/javascript" src="js/base64.js"></script>
+<script type="text/javascript" src="js/api.js"></script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41905116-1', '1248.io');
+ga('send', 'pageview');
+
+</script>
+
+<script>
+var history = [];
+
+function deleteCat(cat_url) {
+    del(cat_url, $('#key').val(), function(err) {
+        if (!err) {
+            // go back
+            if (history.length > 1) {
+                history.pop();  // throw away top
+                url = history.pop();
+                browse(url, function() {
+                    log('browse complete');
+                });
+            }
+        }
+    });
+}
+
+function deleteItem(cat_url, item_url) {
+    var url = cat_url + "?href=" + encodeURI(item_url);
+    del(url, $('#key').val(), function(err) {
+        if (!err) {
+            browse($('#url').val(), function() {
+                log('browse complete');
+            });
+        }
+    });
+}
+
+// http://stackoverflow.com/questions/5999118/add-or-update-query-string-parameter
+function updateQueryStringParameter(uri, key, value) {
+    var re = new RegExp("([?|&])" + key + "=.*?(&|$)", "i");
+    separator = uri.indexOf('?') !== -1 ? "&" : "?";
+    if (uri.match(re)) {
+        return uri.replace(re, '$1' + key + "=" + value + '$2');
+    }
+    else {
+        return uri + separator + key + "=" + value;
+    }
+}
+
+function parseCatalogue(url, doc) {
+    var catMetadataListHTML = '<ul>';
+    try {
+        // store metadata for catalogue
+        for (var i=0;i<doc['item-metadata'].length;i++) {
+            catMetadataListHTML += '<li>' + doc['item-metadata'][i].rel + ' = "' + doc['item-metadata'][i].val + '"</li>';
+        }
+    } catch(e) {
+        log(e);
+    }
+    catMetadataListHTML += '</ul>';
+
+    var itemListHTML = '<ul>';
+    try {
+        for (var i=0;i<doc.items.length;i++) {
+            var item = doc.items[i];
+            item.href = URI(item.href).absoluteTo(url).toString();    // fixup relative URL
+
+            var isCat = false;
+            var isGenericResource = false;
+            var itemMetadataListHTML = '<ul>';
+            var supportsQueryOpenIoT = false;
+            for (var j=0;j<item['i-object-metadata'].length;j++) {
+                var mdata = item['i-object-metadata'][j];
+                if (mdata.rel == 'urn:X-tsbiot:rels:supports:query' && mdata.val == 'urn:X-tsbiot:query:openiot:v1')
+                    supportsQueryOpenIoT = true;
+                itemMetadataListHTML += '<li>' + mdata.rel + ' = "' + mdata.val + '"</li>';
+                if (mdata.rel == "urn:X-tsbiot:rels:isContentType" && mdata.val == "application/vnd.tsbiot.catalogue+json")
+                    isCat = true;
+                if (mdata.rel == "urn:X-tsbiot:rels:isContentType" && (mdata.val == "application/senml+json" || mdata.val == "CompositeContentType"))
+                    isGenericResource = true;
+            }
+            itemMetadataListHTML += '</ul>';
+
+            var link;
+            if (isCat)
+                link = '<a href="javascript:browse(\''+item.href+'\', function(){})">'+item.href+'</a>';
+            else
+            if (isGenericResource)
+                link = '<a href="resourceviewer.html?key='+encodeURIComponent($('#key').val())+'&url='+encodeURIComponent(item.href)+'" target="_blank">'+item.href+'</a>';
+            else
+                link = '<a href="'+item.href+'">'+item.href+'</a>';
+
+            var editlink = '<a href="itemcreator.html?key='+encodeURIComponent($('#key').val())+'&cat_url='+encodeURI(url)+'&href='+encodeURI(item.href)+'" target="_blank"><strong>[edit item]</strong></a>';
+            var deletelink = '<a href="javascript:deleteItem(\''+url+'\',\''+item.href+'\');"><strong>[delete item]</strong></a>';
+
+            var gen_url = function(base, rollup, interval) {
+                var rsrcurl = base
+                rsrcurl = updateQueryStringParameter(rsrcurl, 'interval', interval);
+                rsrcurl = updateQueryStringParameter(rsrcurl, 'rollup', rollup);
+                return '<a href="resourceviewer.html?key='+encodeURIComponent($('#key').val())+'&url='+encodeURIComponent(rsrcurl)+'" target="_blank">['+interval+' '+rollup+']</a>';
+            }
+
+            if (supportsQueryOpenIoT) {
+                itemListHTML += '<li>'+link /*+' '+editlink+' '+deletelink*/;
+                itemListHTML += ' ' + gen_url(item.href, "avg", "1d");
+                itemListHTML += ' ' + gen_url(item.href, "avg", "1h");
+                itemListHTML += ' ' + gen_url(item.href, "avg", "1m");
+                itemListHTML += ' ' + gen_url(item.href, "min", "1d");
+                itemListHTML += ' ' + gen_url(item.href, "min", "1h");
+                itemListHTML += ' ' + gen_url(item.href, "min", "1m");
+                itemListHTML += ' ' + gen_url(item.href, "max", "1d");
+                itemListHTML += ' ' + gen_url(item.href, "max", "1h");
+                itemListHTML += ' ' + gen_url(item.href, "max", "1m");
+                itemListHTML += '</li>';
+            }
+            else
+                itemListHTML += '<li>'+link/*+' '+editlink+' '+deletelink*/+'</li>';
+            itemListHTML += itemMetadataListHTML;
+        }
+        itemListHTML += '</ul>';
+
+        var createitemlink = '<a href="itemcreator.html?key='+encodeURIComponent($('#key').val())+'&cat_url='+encodeURI(url)+'" target="_blank"><strong>[add new item]</strong></a>';
+
+        var deletecatlink = '<a href="javascript:deleteCat(\''+url+'\');"><strong>[delete catalogue]</strong></a>';
+
+        var listHTML = '<ul>';
+        listHTML += '<li>Catalogue Metadata '/*+deletecatlink*/+'</li>';
+        listHTML += catMetadataListHTML;
+        listHTML += '<li>Items '+/*createitemlink+*/'</li>'
+        listHTML += itemListHTML;
+        listHTML += '</ul>';
+
+        $('#browser').html(listHTML);
+    } catch(e) {
+        log(e);
+    }
+}
+
+function browse(url, cb) {
+    fetch(url, $('#key').val(), function(err, doc, location) {
+        if (err) {
+            log("Error in "+url+" ("+err+")");
+            cb(err); // done
+        } else {
+            if (location === undefined)
+                location = url;
+            history.push(location);
+            $('#url').val(location);
+            parseCatalogue(location, doc);    // parse doc
+            cb(null); // done
+        }
+    });
+}
+
+$(document).ready(function() { 
+    var param_url = getQueryVariable('url');
+    var param_key = getQueryVariable('key');
+    if (param_key === undefined)
+        param_key = "";
+
+    $('#key').val(param_key);
+    if (param_url !== undefined) {
+        $('#url').val(param_url);
+    }
+
+    populateExamples();
+
+    // autoload default
+    browse($('#url').val(), function() {
+        log('browse complete');
+    });
+
+    $('#examples').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var valueSelected = this.value;
+        $('#url').val(this.value);
+    });
+
+    $("#go").click(function() {
+        browse($('#url').val(), function() {
+            log('browse complete');
+        });
+    });
+
+    $("#newcat").click(function() {
+        window.open('catcreator.html?key='+encodeURIComponent($('#key').val())+'&cat_url='+encodeURI("http://dev.1248.io:8001/cats/CATNAMEHERE"), "_blank");
+    });
+
+    $("#back").click(function() {
+        if (history.length > 1) {
+            history.pop();  // throw away top
+            url = history.pop();
+            browse(url, function() {
+                log('browse complete');
+            });
+        }
+    });
+});
+
+</script>
+</head>
+
+<body>
+    <a href="http://1248.io"><img src="logo-32x32.png" style="float: right;" border=0></a>
+    <h1>Catalogue Browser</h1>
+
+    <p>
+        <form>
+            <select id="examples"></select>
+            URL:&nbsp;<input type="text" id="url" size=80 value="http://dev.1248.io:8001/cats" />
+            Key&nbsp;<input type="password" id="key" size=40 value="" />
+            <input type="button" id="go" value="Go/Refresh" />
+        </form>
+    </p>
+        <input type="button" id="back" value="Back" />&nbsp;
+        <input type="button" id="newcat" value="Create new catalogue"/>
+    <p>
+        <div id="browser"></div>
+    </p>
+    <p>
+        <div id="log"></div>
+    </p>
+</body>
+
+</html>

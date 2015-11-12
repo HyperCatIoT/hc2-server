@@ -1,0 +1,40 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"kitchen catalogue"
+        }
+    ],
+    "items":[
+        {
+            "href":"/examples/kitchen/sink.txt",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"text/plain"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"kitchen sink"
+                }
+            ]
+        },
+        {
+            "href":"/examples/home/kitchen/cooker.txt",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"text/plain"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"cooker"
+                }
+            ]
+        }
+    ]
+}

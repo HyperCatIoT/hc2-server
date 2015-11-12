@@ -1,0 +1,27 @@
+table {
+    font-size: 14px;
+    background: #fff;
+    width: 100%;
+    thead {
+        background: #fff;
+    }
+    th {
+        padding: 10px 10px;
+        background: #fff;
+        &:first-child {
+            padding-left: 10px;
+        }
+    }
+    td {
+        padding: 10px 10px;
+        &:first-child {
+            padding-left: 10px;
+        }
+    }
+}
+
+.table-striped {
+    tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+}

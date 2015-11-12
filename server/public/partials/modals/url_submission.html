@@ -1,0 +1,20 @@
+<div class="md-modal md-effect-1 md-show">
+    <div class="md-content" ng-show="showForm">
+        <h3>{{title}}</h3>
+        <div class="md-form">
+            <span class="error-message" ng-show="message">{{message}}</span>
+            <form class="form-horizontal" role="form">
+                <textarea ng-model="description" placeholder="A few words about this HyperCat catalogue..."></textarea>
+            </form>
+            <span class="optional-text">*optional</span>
+        </div>
+        <div class="md-buttons">
+            <button class="md-close btn" ng-click="cancel()">Cancel</button>
+            <button class="md-close btn success" ng-click="submit()">Submit</button>
+        </div>
+    </div>
+    <div class="md-content" ng-show="!showForm">
+        <h3>Attempting to add catalogue to TopCat</h3>
+        <div class="loader-bar"></div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"EyeHub example catalog of resources - May-2013"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:supportsSearch",
+            "val":"urn:X-tsbiot:search:simple"
+        }
+    ],
+    "items":[
+        {
+            "href":"https://eyehubhost.com/data/eyehub1/dms/dm123/devices/d456",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"Resource_49_BA_01_light_sensor"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasTag",
+                    "val":"light sensor 49,1st,BA,office"
+                },
+                {
+                    "rel":"http://purl.oclc.org/NET/ssnx/ssn#SensingDevice",
+                    "val":"http://dbpedia.org/page/Photoresistor"
+                },
+                {
+                    "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
+                    "val":"-0.57"
+                },
+                {
+                    "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+                    "val":"51.23"
+                },
+                {
+                    "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#alt",
+                    "val":"45"
+                },
+                {
+                    "rel":"http://www.loa-cnr.it/ontologies/DUL.owl#hasLocation",
+                    "val":"http://www.geonames.org/2647793"
+                }
+            ]
+        }
+    ]
+}
+

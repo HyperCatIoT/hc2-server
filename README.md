@@ -1,6 +1,8 @@
 # HyperCat 2 Reference Server
 
-This project implements a HyperCat 2 server (according to HyperCat 2.0rc1 specification).
+This project implements a HyperCat 2 server (according to HyperCat 2.0rc1 specification) and provides sample demo clients.
+
+The clients are served on port 8040.
 
 Most API features are supported, including:
 
@@ -29,7 +31,7 @@ To run the test suite:
 	
 To start the server (port 8040)
 
-	npm start
+	grunt start
 	
 ## Use
 
@@ -46,10 +48,6 @@ To fetch an external HyperCat
 Extra URL parameters may be added as specified in the HyperCat 2.0rc1 document, such as:
 
 	curl http://127.0.0.1:8040/cat?href=/suva
-
-## Next phase
-
-In coming months, this project will be expanded to include clients for each of the API mechanisms.
 
 ## License
 

@@ -1,0 +1,30 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"power monitor"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasPowerGigaWatts",
+            "val":"1.21"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasBatteryVoltage",
+            "val":"2.8"
+        },
+        {
+            "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
+            "val":"78.041849"
+        },
+        {
+            "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+            "val":"27.175009"
+        }
+    ],
+    "items":[
+    ]
+}

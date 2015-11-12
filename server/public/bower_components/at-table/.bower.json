@@ -1,0 +1,44 @@
+{
+  "name": "at-table",
+  "version": "1.0.4",
+  "homepage": "https://github.com/samu/angular-table",
+  "authors": [
+    "Samuel Mueller"
+  ],
+  "keywords": [
+    "angular",
+    "table",
+    "sortable",
+    "sorting",
+    "paginated",
+    "pagination"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "Gruntfile.coffee",
+    "karma.conf.js",
+    "**/.*",
+    "coffee",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "angular": "~1.2.9"
+  },
+  "devDependencies": {
+    "angular": "1.2.11",
+    "angular-mocks": "1.2.11",
+    "underscore": "~1.6.0"
+  },
+  "_release": "1.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.4",
+    "commit": "eb82fc97c0324c72c96a691b30dfdbcb74c4bf5a"
+  },
+  "_source": "git://github.com/samu/angular-table.git",
+  "_target": "~1.0.4",
+  "_originalSource": "at-table",
+  "_direct": true
+}

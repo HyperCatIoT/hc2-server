@@ -1,0 +1,63 @@
+<html ng-app="hypercat">
+    <head>
+        <title>HyperCat</title>
+
+        <!-- Google WebFonts -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,300italic,400italic' rel='stylesheet' type='text/css'>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+
+    <body>
+        <notifications-bar class="notifications-bar"></notifications-bar>
+        <div class="outer-wrapper">
+            <div class="row">
+                <div class="three columns query-builder">
+                    <div class="query-builder-inner">
+                        <a class="close-menu mobile-only" href="" ng-click="$root.$emit('toggleMenu', {})">close menu</a>
+
+                        <hypercat-select></hypercat-select>
+
+                        <collapsible c-title="Authentication">
+                            <authentication></authentication>
+                        </collapsible>
+
+                        <collapsible c-title="SimpleSearch">
+                            <simple-search></simple-search>
+                        </collapsible>
+
+                        <collapsible c-title="SubstringSearch">
+                            <substring-search></substring-search>
+                        </collapsible>
+
+                        <collapsible c-title="LexicographicSearch">
+                            <lexicographic-search></lexicographic-search>
+                        </collapsible>
+
+                        <collapsible c-title="GeoSearch">
+                            <geo-search></geo-search>
+                        </collapsible>
+
+                        <collapsible c-title="GeoDateSearch">
+                            <geo-date-search></geo-date-search>
+                        </collapsible>
+                    </div>
+                </div>
+                <div class="nine columns offset-margin">
+                    <div class="query-view" ng-view></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third party libraries -->
+        <script src="//maps.google.com/maps/api/js?libraries=drawing"></script>
+        <script src="/js/min/lib.min.js"></script>
+
+        <!-- Application -->
+        <script src="/js/min/app.min.js"></script>
+        <script src="/js/min/services.min.js"></script>
+        <script src="/js/min/controllers.min.js"></script>
+        <script src="/js/min/directives.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+<div class="collapsible">
+    <h4 ng-click="toggle()">{{title}}</h4>
+    <a href="" class="toggle" ng-click="toggle()">{{visible ? "-" : "+"}}</a>
+    <div ng-class="{'visible': visible, 'query-builder-inner': true}">
+        <ng-transclude ng-show="visible"></ng-transclude>
+    </div>
+</div>

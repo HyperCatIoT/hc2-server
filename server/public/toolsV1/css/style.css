@@ -1,0 +1,29 @@
+#log {
+    height: 15%;
+    width:100%; 
+    padding:10px;
+    background:#808080;
+    overflow:scroll;
+    font-family: monospace;
+}
+.green {
+    background-color:#008000;
+}
+.yellow {
+    background-color:#FFFF66;
+}
+#canvascontainer {
+    border: 2px solid black;
+}
+
+.attrs {
+    font-family: monospace;
+    font-size: 9px;
+}
+
+body,td,a,p{font-family:Optima,Verdana,arial,sans-serif;text-align:justify}
+/*body,td,a,p{text-align:justify}*/
+body{line-height:1.5;margin-left:3.5em;margin-right:2em;
+background-color: #ffffff; color: #000000}
+h1,h2,h3,h4{font-family:helvetica,sans-serif;text-align:left}
+

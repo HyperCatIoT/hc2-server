@@ -1,0 +1,46 @@
+<div class="row editor-container">
+    <a href="#/" class="btn dark back-to-view">Back to view</a>
+
+    <div ng-if="!editorEnabled">
+        <h2 style="clear: both; padding: 20px 0;">Editor is disabled on the hosted version</h2>
+    </div>
+
+    <div ng-if="editorEnabled">
+        <h2>Item Editor</h2>
+
+        <div class="editor-inner-container">
+            <h3>Current URL: <span>{{url}}</span></h3>
+
+            <h5>Catalogue Metadata</h5>
+
+            <textarea disabled="true">{{getCatMetadata()}}</textarea>
+
+            <h5>Catalogue Items</h5>
+
+            <div class="item-list">
+                <collapsible c-title="{{item.href}}" class="item" ng-repeat="item in cat.items">
+                    <div class="row">
+                        <div class="nine columns">
+                            <textarea wrap="off" ng-model="item.$string">{{item | prettyJson}}</textarea>
+                        </div>
+                        <div class="three columns">
+                            <a href="" class="btn success" ng-click="updateItem($index)">Update Item</a>
+                            <a href="" class="btn error" ng-click="deleteItem($index, item.href)">Delete Item</a>
+                        </div>
+                    </div>
+                </collapsible>
+            </div>
+
+            <collapsible c-title="(+) Add New Item">
+                <div class="row">
+                    <div class="nine columns">
+                        <textarea wrap="off" ng-model="newItem.val"></textarea>
+                    </div>
+                    <div class="three columns">
+                        <a href="" class="btn success" ng-click="addItem()">Add Item</a>
+                    </div>
+                </div>
+            </collapsible>
+        </div>
+    </div>
+</div>

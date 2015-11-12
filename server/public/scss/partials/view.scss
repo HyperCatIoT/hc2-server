@@ -1,0 +1,117 @@
+.query-view {
+    .run-query {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.query-row {
+    padding: 0 10px;
+    background: rgba(20, 20, 20, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 78%;
+    left: 22%;
+    z-index: 5000000000;
+    pre {
+        margin: 0;
+    }
+    span.title {
+        color: rgba(255, 255, 255, 0.6);
+        display: block;
+        margin-top: 15px;
+    }
+    &::before {
+        z-index: -1;
+        display: block;
+        position: absolute;
+        content: ' ';
+        -webkit-filter: url('#blur');
+        filter: url('#blur');
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+        background-size: cover;
+        opacity: 0.4;
+    }
+}
+
+.show-options {
+    float: left;
+    display: inline-block;
+    margin: 10px 0 0 0;
+    padding: 13px 20px;
+    background: #2A3A49 !important;
+}
+
+.curl {
+    margin-left: 4%;
+}
+
+.notifications {
+    padding: 5px 10px;
+    clear:both;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-left: -10px;
+    transition: all 0.5s;
+
+    &.success {
+        border-bottom: 3px solid green;
+    }
+    &.error {
+        border-bottom: 3px solid red;
+    }
+    &.loading {
+        border-bottom: 3px solid grey;
+    }
+
+    span {
+        color: #aaa;
+    }
+}
+
+.json-view {
+    margin-top: 130px;
+}
+
+@media screen and (max-width: 1000px) {
+    .query-row {
+        position: relative;
+        left: 0;
+        display: block;
+        width: 100%;
+        padding: 10px;
+
+        .run-query {
+            display: inline-block;
+            margin: 10px 25px;
+            float: right;
+            span {
+                margin-left: 10px;
+            }
+        }
+        .two.columns {
+            float: none;
+        }
+    }
+    .curl {
+        margin-left: 0;
+    }
+    .offset-margin {
+        margin: 0 !important;
+        float: none;
+        overflow: hidden;
+    }
+
+    .show-options {
+        float: left;
+        display: inline-block;
+    }
+
+    .json-view {
+        margin-top: 20px;
+    }
+}

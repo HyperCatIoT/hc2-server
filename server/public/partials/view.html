@@ -1,0 +1,34 @@
+<div class="row query-row">
+    <a href="" class="btn subfocus show-options mobile-only" ng-click="toggleMenu()">
+        <span>&raquo; Show Options</span>
+    </a>
+
+    <div class="two columns">
+        <a href="" class="btn success with-icon run-query" ng-click="runQuery()">
+            <img src="img/play.svg" height="32" width="32">
+            <span>Run Query</span>
+        </a>
+    </div>
+
+    <div class="ten columns curl">
+        <span class="title">cURL Command: <a href="" ng-click="copyCurlToClipboard()">Copy to Clipboard</a></span>
+        <pre>{{getQuery()}}</pre>
+    </div>
+
+    <div ng-class="{'row notifications': true,
+            'success': !notification.error,
+            'error': notification.error,
+            'loading': notification.loading}"
+         ng-if="notification !== null">
+        <span ng-if="!notification.error && notification.items !== undefined">Catalog loaded with {{notification.items}} items</span>
+        <span ng-if="notification.error">Error: {{notification.message}}</span>
+        <span ng-if="notification.loading">Loading catalog...</span>
+    </div>
+</div>
+
+<div class="row json-view">
+    <a href="" class="btn active" ng-click="toggleMapView()" ng-if="isGeo" style="margin: 10px 10px;float: right;">{{toggleMapViewText()}}</a>
+    <pre ng-if="!mapView" json-pretty data="data" edition="true"></pre>
+    <map ng-if="mapView" center="50, 0" zoom="3" style="clear: both;">
+    </map>
+</div>

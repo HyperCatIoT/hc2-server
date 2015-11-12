@@ -1,0 +1,154 @@
+<!-- Copyright (c) 2013 Toby Jaffey <toby@1248.io>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41905116-1', '1248.io');
+ga('send', 'pageview');
+
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+function validateMetadataArray(metadataArray, checkContentType) {
+    var hasDescription = false;
+    var hasContentType = false;
+    for (var i=0;i<metadataArray.length;i++) {
+        if (typeof metadataArray[i] != 'object')
+            throw new Error("Metadata array does not contain an object: "+JSON.stringify(metadataArray[i]));
+        if (metadataArray[i].rel === undefined)
+            throw new Error("Metadata array object has no rel: "+JSON.stringify(metadataArray[i]));
+        if (typeof metadataArray[i].rel != 'string')
+            throw new Error("Metadata array object rel is not string: "+JSON.stringify(metadataArray[i]));
+        if (metadataArray[i].rel === "")
+            throw new Error("Metadata array object rel is empty "+JSON.stringify(metadataArray[i]));
+        if (metadataArray[i].val === undefined)
+            throw new Error("Metadata array object has no val: "+JSON.stringify(metadataArray[i]));
+        if (typeof metadataArray[i].val != 'string')
+            throw new Error("Metadata array object has no val string: "+JSON.stringify(metadataArray[i]));
+        if (metadataArray[i].val === "")
+            throw new Error("Metadata array object val is empty: "+JSON.stringify(metadataArray[i]));   // SmartStreets interpretation, to be ratified
+        if (Object.keys(metadataArray[i]).length != 2)
+            throw new Error("Metadata array object should have only two properties "+JSON.stringify(metadataArray[i]));
+        if (metadataArray[i].rel == 'urn:X-tsbiot:rels:hasDescription:en')
+            hasDescription = true;
+        if (metadataArray[i].rel == 'urn:X-tsbiot:rels:isContentType' &&
+            metadataArray[i].val == 'application/vnd.tsbiot.catalogue+json')
+            hasContentType = true;
+    }
+    if (!hasDescription)
+        throw new Error("Metadata array does not contain urn:X-tsbiot:rels:hasDescription:en: "+JSON.stringify(metadataArray));
+    if (checkContentType && !hasContentType)
+        throw new Error("Metadata array does not contain urn:X-tsbiot:rels:isContentType application/vnd.tsbiot.catalogue+json: "+JSON.stringify(metadataArray));
+}
+
+function validateItem(item) {
+    // a valid item must have href and a metadata array
+    if (item.href === undefined)
+        throw new Error("Item href is missing: "+JSON.stringify(item));
+    if (typeof item.href != 'string')
+        throw new Error("Item href is not a string: "+JSON.stringify(item));
+    if (item['i-object-metadata'] === undefined)
+        throw new Error("Item i-object-metdata is missing: "+JSON.stringify(item));
+    if (!(item['i-object-metadata'] instanceof Array))
+        throw new Error("Item metadata is not an array: "+JSON.stringify(item));
+    validateMetadataArray(item['i-object-metadata'], false);
+}
+
+function validate_cat(cat) {
+    var i;
+    if (typeof cat != 'object')
+        throw new Error("Catalogue is not an object: "+JSON.stringify(cat));
+    if (cat.items === undefined)
+        throw new Error("Catalogue items missing: "+JSON.stringify(cat));
+    if (!(cat.items instanceof Array))
+        throw new Error("Catalogue items are not an array: "+JSON.stringify(cat));
+    if (cat['item-metadata'] === undefined)
+        throw new Error("Catalogue item-metadata missing: "+JSON.stringify(cat));
+    if (!(cat['item-metadata'] instanceof Array))
+        throw new Error("Catalogue item-metadata is not an array: "+JSON.stringify(cat));
+    validateMetadataArray(cat['item-metadata'], true);
+    for (i=0;i<cat.items.length;i++)
+        validateItem(cat.items[i]);
+}
+
+$(document).ready(function() { 
+    $("#validate").click(function() {
+        var cat;
+        try {
+            cat = JSON.parse($('#text').val());
+        } catch(e) {
+            $('#results').html("Not valid JSON: "+e);
+            return;
+        }
+        try {
+            validate_cat(cat);
+            $('#results').html("OK");
+        } catch(e) {
+            $('#results').html(e);
+        }
+    });
+});
+
+</script>
+</head>
+
+<body>
+<a href="http://1248.io"><img src="logo-32x32.png" style="float: right;" border=0></a>
+<h1>Catalogue Syntax Validator</h1>
+
+<p>
+<textarea rows="24" cols="80" id="text">
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"A small legal catalogue"
+        }
+    ],
+    "items":[
+        {
+            "href":"http://example.org/1",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"Thing 1"
+                }
+            ]
+        }
+    ]
+}
+</textarea><br>
+<input type="button" value="Validate" id="validate">
+<div id="results"></div>
+</p>
+
+

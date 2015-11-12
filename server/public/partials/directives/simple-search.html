@@ -1,0 +1,29 @@
+<div class="simple-search">
+    <form ng-submit="updateQuery()">
+        <div class="series-input">
+            <label>
+                <span>rel:</span>
+                <input type="text" ng-model="data.value.rel" ng-change="updateQuery()" ng-trim="false">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>val:</span>
+                <input type="text" ng-model="data.value.val" ng-change="updateQuery()" ng-trim="false">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>href:</span>
+                <input type="text" ng-model="data.value.href" ng-change="updateQuery()" ng-trim="false">
+            </label>
+        </div>
+
+        <label style="display:inline-block; float: right;">
+            <input type="checkbox" ng-model="usingFilter" ng-change="toggle()">
+            <span>Use SimpleSearch?</span>
+        </label>
+
+        <!--<input type="submit" value="Use Query Parameters" class="btn active right">-->
+    </form>
+</div>

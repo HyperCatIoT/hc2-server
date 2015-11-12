@@ -1,0 +1,28 @@
+<div class="md-modal md-large md-show">
+    <div class="md-content" ng-show="showForm">
+        <h3>{{title}}</h3>
+
+        <div>
+            <div class="medium-input">
+                <input type="text" placeholder="Filter results" ng-model="query" ng-change="updateFilteredList()">
+                <img src="/img/search.png" class="input-icon">
+            </div>
+        </div>
+
+        <div>
+            <table class="table-striped" at-table at-list="filteredItems" at-config="tableConfig" at-paginated>
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td at-attribute="href"><a href="{{item.href}}" target="_blank">{{item.href}}</a></td>
+                    <td at-implicit at-attribute="description"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <at-pagination at-config="tableConfig" at-list="filteredItems" at-items-per-page="1"></at-pagination>
+        <div class="md-buttons">
+            <button class="md-close btn success" ng-click="close()">Close</button>
+        </div>
+    </div>
+</div>

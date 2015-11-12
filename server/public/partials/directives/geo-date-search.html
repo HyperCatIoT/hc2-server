@@ -1,0 +1,73 @@
+<span class="notes">This filter is an example of how MultiSearch can be implemented in an application. The server has full MultiSearch support.</span>
+
+<div class="map" style="max-height: 300px; overflow: hidden; margin-bottom: 10px;">
+    <a href="" ng-click="toggleMap()">{{mapToggleText}}</a>
+    <div ng-if="showMap"
+         ng-click="enablePointerEvents()"
+         ng-mouseleave="disablePointerEvents()">
+        <map center="0, 0" zoom="2"
+            ng-class="{'no-pointer-events': !pointerEvents}"
+            street-view-control="false"
+            disable-default-u-i="true"
+            map-type-control-options="{
+              mapTypeIds: ['ROADMAP'],
+              style: 'DROPDOWN_MENU'
+            }"></map>
+    </div>
+</div>
+
+
+<div class="simple-search">
+    <form ng-submit="updateQuery()">
+        <div class="series-input">
+            <label>
+                <span>minimum latitude:</span>
+                <input type="text" ng-model="data.value.geo['geobound-minlat']" ng-change="updateQuery()">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>maximum latitude:</span>
+                <input type="text" ng-model="data.value.geo['geobound-maxlat']" ng-change="updateQuery()">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>minimum longitude:</span>
+                <input type="text" ng-model="data.value.geo['geobound-minlong']" ng-change="updateQuery()">
+            </label>
+        </div>
+        <div class="series-input">
+            <label>
+                <span>maximum latitude:</span>
+                <input type="text" ng-model="data.value.geo['geobound-maxlong']" ng-change="updateQuery()">
+            </label>
+        </div>
+
+        <div class="dates">
+            <div class="series-input">
+                <label>
+                    <span>date rel:</span>
+                    <input type="text" ng-model="data.value.date['lexrange-rel']" ng-change="updateQuery()">
+                </label>
+            </div>
+            <div class="series-input">
+                <label>
+                    <span>start:</span>
+                    <input type="date" data-format="dd/MM/yyyy" placeholder="dd/mm/yyyy" ng-model="data.value.date['lexrange-min']" ng-change="updateQuery()">
+                </label>
+            </div>
+            <div class="series-input">
+                <label>
+                    <span>end:</span>
+                    <input type="date" data-format="dd/MM/yyyy" placeholder="dd/mm/yyyy" ng-model="data.value.date['lexrange-max']" ng-change="updateQuery()">
+                </label>
+            </div>
+        </div>
+
+        <label style="display:inline-block; float: right; clear: right;">
+            <input type="checkbox" ng-model="usingFilter" ng-change="toggle()">
+            <span>Use Multisearch?</span>
+        </label>
+    </form>
+</div>

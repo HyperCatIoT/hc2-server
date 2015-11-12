@@ -1,0 +1,50 @@
+@import "../bower_components/hmps-animate-scss/animate.scss";
+
+.notifications {
+	.notifications-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		min-height: 60px;
+		line-height: 60px;
+		width: 100%;
+		z-index: 1000;
+	}
+
+	.notification {
+		position: relative;
+		@include fadeInDown();
+		text-align: center;
+		font-size: 18px;
+		color: #fff;
+	}
+
+	.message {
+		padding: 0 12px;
+	}
+
+	.error {
+		@extend .notification;
+		background-color: #F64747;
+		border-bottom: 1px solid #f31515;
+	}
+
+	.success {
+		@extend .notification;
+		background-color: #03C9A9;
+		border-bottom: 1px solid #02aa8f;
+	}
+
+	.warning {
+		@extend .notification;
+		background-color: #F7CA18;
+		border-bottom: 1px solid #e7ba08;
+	}
+
+	.close-click {
+		font-size: 12px;
+		cursor: pointer;
+		padding: 10px;
+		margin: 0 auto;
+	}
+}

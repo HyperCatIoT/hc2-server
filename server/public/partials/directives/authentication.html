@@ -1,0 +1,17 @@
+<div class="simple-search">
+    <form ng-submit="updateQuery()">
+        <div class="series-input">
+            <label>
+                <span>API Key:</span>
+                <input type="text" ng-model="data.username" ng-change="updateQuery()">
+            </label>
+        </div>
+
+        <label style="display:inline-block; float: right;">
+            <input type="checkbox" ng-model="data.useAuth" ng-change="updateQuery()">
+            <span>Use Auth?</span>
+        </label>
+
+        <span class="notes">If using auth on the example HyperCat, the API key is "passkey".</span>
+    </form>
+</div>

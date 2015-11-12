@@ -1,0 +1,126 @@
+input {
+    font-weight: 300;
+}
+
+label {
+    font-weight: 400;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
+
+.inline-input {
+    span {
+        display: block;
+        float: left;
+        width: 20%;
+        margin-top: 7px;
+        font-size: 16px;
+        font-style: italic;
+    }
+    input {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 80%;
+    }
+}
+
+.series-input {
+    span {
+        display: block;
+        font-size: 16px;
+        font-style: italic;
+    }
+    input {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 100%;
+        display: block;
+    }
+    input[type="text"] {
+        color: #ccc;
+    }
+}
+
+.large-input {
+    width: 100%;
+    position: relative;
+
+    input[type="text"] {
+        background: #ffffff;
+        color: #555;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        padding: 13px 70px;
+        font-weight: 200;
+        font-size: 19px;
+        height: auto;
+
+    }
+    input[type="submit"] {
+        position: absolute;
+        top: 8px;
+        right: 6px;
+        background: #56a4f9;
+        border: none;
+        color: #fff;
+        font-weight: 300;
+        font-size: 13px;
+        padding: 9px 15px;
+        text-transform: none;
+        outline: none;
+        transition: all 0.3s;
+        @include border-radius(3px);
+        @include box-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
+
+        &:hover {
+            color: #fff;
+            @include box-shadow(1px 1px 6px rgba(0, 0, 0, 0.5));
+        }
+    }
+
+    .input-icon {
+        position: absolute;
+        top: 4px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        @include opacity(0.3);
+    }
+}
+
+.medium-input {
+    width: 100%;
+    position: relative;
+
+    input[type="text"] {
+        background: #ffffff;
+        color: #555;
+        border: none;
+        width: 100%;
+        padding: 9px 40px;
+        height: auto;
+        font-weight: 200;
+        font-size: 16px;
+        @include border-radius(3px);
+        @include box-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    }
+    .input-icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 18px;
+        height: 18px;
+        @include opacity(0.3);
+    }
+}

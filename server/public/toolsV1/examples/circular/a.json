@@ -1,0 +1,27 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"circular catalogue"
+        }
+    ],
+    "items":[
+        {
+            "href":"/examples/circular/b.json",
+            "i-object-metadata":[
+                {
+                    "rel":"urn:X-tsbiot:rels:isContentType",
+                    "val":"application/vnd.tsbiot.catalogue+json"
+                },
+                {
+                    "rel":"urn:X-tsbiot:rels:hasDescription:en",
+                    "val":"circular catalogue"
+                }
+            ]
+        }
+    ]
+}

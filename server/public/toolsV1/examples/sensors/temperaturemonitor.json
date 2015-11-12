@@ -1,0 +1,30 @@
+{
+    "item-metadata":[
+        {
+            "rel":"urn:X-tsbiot:rels:isContentType",
+            "val":"application/vnd.tsbiot.catalogue+json"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasDescription:en",
+            "val":"temperature monitor"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasTemperatureCelsius",
+            "val":"21.4"
+        },
+        {
+            "rel":"urn:X-tsbiot:rels:hasBatteryVoltage",
+            "val":"2.9"
+        },
+        {
+            "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
+            "val":"-73.985569"
+        },
+        {
+            "rel":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+            "val":"40.748284"
+        }
+    ],
+    "items":[
+    ]
+}
