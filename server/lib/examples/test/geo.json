@@ -1,5 +1,5 @@
 {
-    "item-metadata": [
+    "catalogue-metadata": [
         {
             "val":"application/vnd.hypercat.catalogue+json",
             "rel":"urn:X-hypercat:rels:isContentType"
@@ -11,7 +11,7 @@
     ],
     "items": [
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -28,7 +28,7 @@
             "href": "/london"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -45,7 +45,7 @@
             "href": "/newyork"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -62,7 +62,7 @@
             "href": "/toronto"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -79,7 +79,7 @@
             "href": "/tokyo"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -96,7 +96,7 @@
             "href": "/dubai"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"

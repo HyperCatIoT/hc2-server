@@ -1,5 +1,5 @@
 {
-    "item-metadata":[
+    "catalogue-metadata":[
         {
             "val":"application/vnd.hypercat.catalogue+json",
             "rel":"urn:X-hypercat:rels:isContentType"
@@ -31,7 +31,7 @@
     ],
     "items":[
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -80,7 +80,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/542"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -129,7 +129,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/543"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -178,7 +178,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/540"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -227,7 +227,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/541"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -276,7 +276,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/546"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -325,7 +325,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/547"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -374,7 +374,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/544"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -423,7 +423,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/545"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -472,7 +472,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/548"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -521,7 +521,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/549"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -570,7 +570,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42843"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -619,7 +619,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42842"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -668,7 +668,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42841"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -717,7 +717,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42840"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -766,7 +766,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42847"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -815,7 +815,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42846"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -864,7 +864,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42845"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -913,7 +913,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42844"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -962,7 +962,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42849"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1011,7 +1011,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42848"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1060,7 +1060,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/536"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1109,7 +1109,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/534"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1158,7 +1158,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/533"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1207,7 +1207,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/532"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1256,7 +1256,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/531"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1305,7 +1305,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/530"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1354,7 +1354,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/539"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1403,7 +1403,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/538"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1452,7 +1452,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/199"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1501,7 +1501,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42858"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1550,7 +1550,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42854"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1599,7 +1599,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42855"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1648,7 +1648,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42856"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1697,7 +1697,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42857"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1746,7 +1746,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42850"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1795,7 +1795,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42851"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1844,7 +1844,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/524"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1893,7 +1893,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/525"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1942,7 +1942,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/526"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -1991,7 +1991,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/520"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2040,7 +2040,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/521"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2089,7 +2089,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/522"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2138,7 +2138,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/523"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2187,7 +2187,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42835"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2236,7 +2236,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/528"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2285,7 +2285,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/529"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2334,7 +2334,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42829"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2383,7 +2383,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42828"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2432,7 +2432,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42821"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2481,7 +2481,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42820"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2530,7 +2530,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42823"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2579,7 +2579,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42822"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2628,7 +2628,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42825"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2677,7 +2677,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42824"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2726,7 +2726,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42827"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2775,7 +2775,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42826"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2824,7 +2824,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/519"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2873,7 +2873,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42838"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2922,7 +2922,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42839"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -2971,7 +2971,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42832"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3020,7 +3020,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42833"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3069,7 +3069,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42830"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3118,7 +3118,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42831"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3167,7 +3167,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42836"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3216,7 +3216,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42837"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3265,7 +3265,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42834"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3314,7 +3314,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42815"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3363,7 +3363,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42818"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3412,7 +3412,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42819"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3461,7 +3461,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/500"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3510,7 +3510,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/166"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3555,7 +3555,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/11"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3600,7 +3600,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/12"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3645,7 +3645,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/17"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3690,7 +3690,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/18"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3739,7 +3739,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/863"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3788,7 +3788,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42812"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3837,7 +3837,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42813"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3886,7 +3886,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/559"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3935,7 +3935,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/558"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -3984,7 +3984,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42816"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4033,7 +4033,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42817"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4082,7 +4082,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/555"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4131,7 +4131,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/554"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4180,7 +4180,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/557"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4229,7 +4229,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/556"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4278,7 +4278,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/551"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4327,7 +4327,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/550"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4376,7 +4376,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/553"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4425,7 +4425,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/552"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4474,7 +4474,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/46"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4519,7 +4519,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/47"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4568,7 +4568,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/42814"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4617,7 +4617,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/40"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4666,7 +4666,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/201"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4715,7 +4715,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/200"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4764,7 +4764,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/203"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4813,7 +4813,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/202"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"
@@ -4858,7 +4858,7 @@
             "href":"http://smartstreets.sensetecnic.com/wotkit/api/v2/sensors/76"
         },
         {
-            "i-object-metadata":[
+            "item-metadata":[
                 {
                     "val":"PUBLIC",
                     "rel":"urn:X-smartstreets:rels:hasVisibility"

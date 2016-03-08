@@ -57,11 +57,11 @@ describe("GET /cat", function() {
 });
 
 describe("GET /cat with external URL", function() {
-    var externalUrl = '/cat?url=' + encodeURIComponent('http://localhost:8040/test'),
+    var externalUrl = '/cat?url=' + encodeURIComponent('http://localhost:8080/test'),
         malformedUrl = '/cat?url=badurl/123',
         fourOhFour = '/cat?url=' + encodeURIComponent('http://www.google.com/cat/test'),
         nonJson = '/cat?url=' + encodeURIComponent('http://www.google.com/'),
-        nonHyperCat = '/cat?url=' + encodeURIComponent('http://date.jsontest.com');
+        nonHypercat = '/cat?url=' + encodeURIComponent('http://date.jsontest.com');
 
     before(function(done) {
         server.start(true).then(function() {
@@ -106,8 +106,8 @@ describe("GET /cat with external URL", function() {
             });
     });
 
-    it("should return a status 400 error if the URL retuns a non-HyperCat document", function() {
-        return chai.request(settings.getBaseURL()).get(nonHyperCat)
+    it("should return a status 400 error if the URL retuns a non-Hypercat document", function() {
+        return chai.request(settings.getBaseURL()).get(nonHypercat)
             .then(function(res) {
                 res.should.have.status(400);
             });

@@ -1,5 +1,5 @@
 {
-    "item-metadata": [
+    "catalogue-metadata": [
         {
             "val":"application/vnd.hypercat.catalogue+json",
             "rel":"urn:X-hypercat:rels:isContentType"
@@ -11,7 +11,7 @@
     ],
     "items": [
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -24,7 +24,7 @@
             "href": "/something"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -37,7 +37,7 @@
             "href": "/something-else"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -50,7 +50,7 @@
             "href": "/other-thing"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "",
                     "rel": "urn:X-hypercat:rels:hasDescription:en"

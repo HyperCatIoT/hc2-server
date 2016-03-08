@@ -59,7 +59,7 @@ describe("Filter - MultiSearch", function() {
             .send({
                 "union": [
                     {"query": "?geobound-minlat=0.012"},
-                    {"query": "?substring-href=%2Flon"}
+                    {"query": "?prefix-href=%2Flon"}
                 ]
             })
             .then(function(res) {
@@ -73,7 +73,7 @@ describe("Filter - MultiSearch", function() {
             .send({
                 "intersection": [
                     {"query": "?geobound-minlat=0.012"},
-                    {"query": "?substring-href=%2Flon"}
+                    {"query": "?prefix-href=%2Flon"}
                 ]
             })
             .then(function(res) {
@@ -97,9 +97,9 @@ describe("Filter - MultiSearch", function() {
             .post(catUrl)
             .send({
                 "intersection": [
-                    {"query": "?substring-href=%2Flon"},
+                    {"query": "?prefix-href=%2Flon"},
                     {"union": [
-                        {"query": "?substring-rel=http%3A%2F%2Fwww.w3.org%2F2003%2F01%2Fgeo"},
+                        {"query": "?prefix-rel=http%3A%2F%2Fwww.w3.org%2F2003%2F01%2Fgeo"},
                         {"query": "?geobound-minlat=49.15296965617042&geobound-maxlat=60.06484046010452&geobound-minlong=-13.7109375&geobound-maxlong=4.921875"}
                     ]}
                 ]

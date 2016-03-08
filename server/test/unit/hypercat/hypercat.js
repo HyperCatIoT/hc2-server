@@ -13,10 +13,10 @@ var hypercat = require('../../../lib/hypercat/hypercat.js');
 chai.use(chaiAsPromised);
 chai.should();
 
-describe('HyperCat Validity', function() {
+describe('Hypercat Validity', function() {
     it("should accept a valid hypercat document", function() {
         return hypercat.checkValid({
-            "item-metadata":[
+            "catalogue-metadata":[
                 {
                     "rel":"urn:X-hypercat:rels:isContentType",
                     "val":"application/vnd.hypercat.catalogue+json"
@@ -29,7 +29,7 @@ describe('HyperCat Validity', function() {
             "items":[
                 {
                     "href":"/examples/sensors/powermonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-hypercat:rels:isContentType",
                             "val":"application/vnd.hypercat.catalogue+json"
@@ -42,7 +42,7 @@ describe('HyperCat Validity', function() {
                 },
                 {
                     "href":"/examples/sensors/temperaturemonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-hypercat:rels:isContentType",
                             "val":"application/vnd.hypercat.catalogue+json"
@@ -66,7 +66,7 @@ describe('HyperCat Validity', function() {
             "items": [
                 {
                     "href":"/examples/sensors/temperaturemonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-hypercat:rels:isContentType",
                             "val":"application/vnd.hypercat.catalogue+json"
@@ -83,7 +83,7 @@ describe('HyperCat Validity', function() {
 
     it("should reject a document with no items", function() {
         return hypercat.checkValid({
-            "item-metadata":[
+            "catalogue-metadata":[
                 {
                     "rel":"urn:X-hypercat:rels:isContentType",
                     "val":"application/vnd.hypercat.catalogue+json"
@@ -98,7 +98,7 @@ describe('HyperCat Validity', function() {
 
     it("should accept a valid catalog document", function() {
         return hypercat.checkIfCatalog({
-            "item-metadata":[
+            "catalogue-metadata":[
                 {
                     "rel":"urn:X-hypercat:rels:isContentType",
                     "val":"application/vnd.hypercat.catalogue+json"
@@ -111,7 +111,7 @@ describe('HyperCat Validity', function() {
             "items":[
                 {
                     "href":"/examples/sensors/powermonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-hypercat:rels:isContentType",
                             "val":"application/vnd.hypercat.catalogue+json"
@@ -124,7 +124,7 @@ describe('HyperCat Validity', function() {
                 },
                 {
                     "href":"/examples/sensors/temperaturemonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-hypercat:rels:isContentType",
                             "val":"application/vnd.hypercat.catalogue+json"
@@ -141,7 +141,7 @@ describe('HyperCat Validity', function() {
 
     it("should decline a catalog without the correct metadata", function() {
         return hypercat.checkIfCatalog({
-            "item-metadata":[
+            "catalogue-metadata":[
                 {
                     "rel":"urn:X-hypercat:rels:isContentType",
                     "val":"application/vnd.hypercat.item+json"
@@ -154,7 +154,7 @@ describe('HyperCat Validity', function() {
             "items":[
                 {
                     "href":"/examples/sensors/powermonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-hypercat:rels:isContentType",
                             "val":"application/vnd.hypercat.catalogue+json"
@@ -167,7 +167,7 @@ describe('HyperCat Validity', function() {
                 },
                 {
                     "href":"/examples/sensors/temperaturemonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-hypercat:rels:isContentType",
                             "val":"application/vnd.hypercat.catalogue+json"
@@ -184,7 +184,7 @@ describe('HyperCat Validity', function() {
 
     it("should decline a v1 hypercat document (using tsbiot)", function() {
         return hypercat.checkIfCatalog({
-            "item-metadata":[
+            "catalogue-metadata":[
                 {
                     "rel":"urn:X-tsbiot:rels:isContentType",
                     "val":"application/vnd.tsbiot.catalogue+json"
@@ -197,7 +197,7 @@ describe('HyperCat Validity', function() {
             "items":[
                 {
                     "href":"/examples/sensors/powermonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-tsbiot:rels:isContentType",
                             "val":"application/vnd.tsbiot.catalogue+json"
@@ -210,7 +210,7 @@ describe('HyperCat Validity', function() {
                 },
                 {
                     "href":"/examples/sensors/temperaturemonitor.json",
-                    "i-object-metadata":[
+                    "item-metadata":[
                         {
                             "rel":"urn:X-tsbiot:rels:isContentType",
                             "val":"application/vnd.tsbiot.catalogue+json"

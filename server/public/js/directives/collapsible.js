@@ -23,7 +23,7 @@ angular.module('hypercat.directives')
                     }
                 };
 
-                $rootScope.$on('collapsibleOpen', function(e, data) {
+                $rootScope.$on('collapsibleOpen', function() {
                     if (!scope.eventSent) {
                         scope.visible = false;
                     }

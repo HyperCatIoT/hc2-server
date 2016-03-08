@@ -58,9 +58,9 @@ module.exports = (function() {
                 );
 
                 // Start listening
-                privates.conn = app.listen(8040);
+                privates.conn = app.listen(8080);
                 if (!silent) {
-                    console.log("HyperCat Reference daemon started on port 8040");
+                    console.log("Hypercat Reference daemon started on port 8080");
                 }
 
                 return Promise.resolve();

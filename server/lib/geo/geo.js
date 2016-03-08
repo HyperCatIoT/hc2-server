@@ -49,7 +49,7 @@ module.exports = (function() {
                         (maxLat > point.lat)) { // max only
                             found = true;
                     } else {
-                        found = false;
+                        return false;
                     }
                 }
 
@@ -68,7 +68,7 @@ module.exports = (function() {
                             (maxLong > point.long)) { // max only
                                 found = true;
                         } else {
-                            found = false;
+                            return false;
                         }
                     } else {
                         // Check values across the antimeridian
@@ -77,7 +77,7 @@ module.exports = (function() {
                             (point.long < maxLong && point.long > MIN_LONGITUDE)) {
                                 found = true;
                         } else {
-                            found = false;
+                            return false;
                         }
                     }
                 }

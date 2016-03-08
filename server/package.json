@@ -1,7 +1,7 @@
 {
-  "name": "hypercat-ref",
-  "version": "1.1.0",
-  "description": "HyperCat Reference",
+  "name": "topcat",
+  "version": "1.0.0",
+  "description": "Topcat of Hypercat",
   "main": "lib/main.js",
   "dependencies": {
     "body-parser": "^1.12.0",
@@ -30,10 +30,13 @@
     "matchdep": "~0.3.0",
     "mocha": "^2.2.1",
     "mocha-jenkins-reporter": "0.1.6",
+    "casperjs": "^1.1.0-beta3",
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
     "chai-http": "^1.0.0",
-    "mocha-eslint": "^0.1.7"
+    "mocha-casperjs": "^0.5.3",
+    "mocha-eslint": "^0.1.7",
+    "loadtest": "^1.2.11"
   },
   "peerDependencies": {
     "grunt-cli": "~0.1.13"
@@ -43,6 +46,7 @@
     "start": "grunt start",
     "test": "grunt build && mocha --recursive -t 20000 -s 1000 test/unit test/api",
     "test-no-build": "mocha --recursive -t 20000 -s 1000 test/unit test/api",
-    "eslint": "node_modules/eslint/bin/eslint.js lib public/js/app.js public/js/controllers public/js/services public/js/directives test"
+    "eslint": "node_modules/eslint/bin/eslint.js lib public/js/app.js public/js/controllers public/js/services public/js/directives test",
+    "testeslint": "rm -f /vagrant/testeslint_results.xml; node_modules/eslint/bin/eslint.js -f junit lib public/js/app.js public/js/controllers public/js/services test >> /vagrant/testeslint_results.xml; tools/junit/testtest.sh; exit 0"
   }
 }

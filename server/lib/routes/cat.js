@@ -60,7 +60,7 @@ module.exports = (function() {
                 /**
                  * Route: POST /cat
                  */
-                 // curl -H "Content-Type: application/json" -X POST -d '{"i-object-metadata": [{"val": "something","rel": "reference"}],"href": "/something"}' localhost:8060/cat?url=LOCAL:blank
+                 // curl -H "Content-Type: application/json" -X POST -d '{"item-metadata": [{"val": "something","rel": "reference"}],"href": "/something"}' localhost:8060/cat?url=LOCAL:blank
                 app.post('/cat', function(req, res) {
                     var url = req.query.url,
                         params = req.query,
@@ -123,7 +123,7 @@ module.exports = (function() {
                 /**
                  * Route: PUT /cat
                  */
-                 // curl -H "Content-Type: application/json" -X PUT -d '{"i-object-metadata": [{"val": "one","rel": "two"}],"href": "/something"}' "localhost:8060/cat?url=LOCAL:blank&href=%2Fsomething"
+                 // curl -H "Content-Type: application/json" -X PUT -d '{"item-metadata": [{"val": "one","rel": "two"}],"href": "/something"}' "localhost:8060/cat?url=LOCAL:blank&href=%2Fsomething"
                 app.put('/cat', function(req, res) {
                     var url = req.query.url,
                         params = req.query,

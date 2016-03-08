@@ -1,6 +1,6 @@
 {
     "0": {
-        "i-object-metadata": [
+        "item-metadata": [
             {
                 "val": "one",
                 "rel": "three"
@@ -8,7 +8,7 @@
         ],
         "href": "/something"
     },
-    "item-metadata": [
+    "catalogue-metadata": [
         {
             "val": "application/vnd.hypercat.catalogue+json",
             "rel": "urn:X-hypercat:rels:isContentType"
@@ -20,7 +20,7 @@
     ],
     "items": [
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "one",
                     "rel": "three"
@@ -29,7 +29,7 @@
             "href": "/something"
         },
         {
-            "i-object-metadata": [
+            "item-metadata": [
                 {
                     "val": "something",
                     "rel": "reference"

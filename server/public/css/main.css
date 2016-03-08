@@ -1,7 +1,7 @@
 /*!
- * hypercat-ref
+ * topcat
  * @author 1248 Ltd. <info@1248.io>
- * @version 1.1.0
+ * @version 1.0.0
  * Copyright .  licensed.
  */
 

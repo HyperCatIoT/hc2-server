@@ -49,7 +49,7 @@ angular.module('hypercat.services')
             };
 
             /**
-             * Get the full HyperCat catalogue from /cat
+             * Get the full Hypercat catalogue from /cat
              *
              * @returns {Promise}
              */
@@ -101,7 +101,7 @@ angular.module('hypercat.services')
                     $http.defaults.headers.common.Authorization = null;
                 }
 
-                // Check if we are using local HyperCat
+                // Check if we are using local Hypercat
                 if (!url || url === null) {
                     url = '/cat';
                 }
@@ -147,8 +147,8 @@ angular.module('hypercat.services')
                         };
 
                         // Try and find the description to add to the object
-                        for (j = 0; j < items[i]['i-object-metadata'].length; j += 1) {
-                            metadata = items[i]['i-object-metadata'][j];
+                        for (j = 0; j < items[i]['item-metadata'].length; j += 1) {
+                            metadata = items[i]['item-metadata'][j];
                             if (metadata.rel === 'urn:X-hypercat:rels:hasDescription:en') {
                                 simpleItem.description = metadata.val;
                             }

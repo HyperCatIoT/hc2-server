@@ -1,6 +1,6 @@
-# HyperCat 2 Reference Server
+# Hypercat 3 Reference Server
 
-This project implements a HyperCat 2 server (according to HyperCat 2.0rc1 specification) and provides sample demo clients.
+This project implements a Hypercat 3 server (according to Hypercat 3.00rc1 specification) and provides sample demo clients.
 
 The clients are served on port 8040.
 
@@ -11,10 +11,10 @@ Most API features are supported, including:
  - Geo search
  - Lexicographic search
  - Simple search
- - Substring prefix search
+ - Prefix search
  - Authentication
 
-By default, the server offers the file `./server/lib/examples/data.json` as the catalogue. Through the use of the `url` query parameter, the server can function as a proxy adding search capabilities to an externally hosted HyperCat.
+By default, the server offers the file `./server/lib/examples/data.json` as the catalogue. Through the use of the `url` query parameter, the server can function as a proxy adding search capabilities to an externally hosted Hypercat.
 
 ## Building
 
@@ -35,17 +35,17 @@ To start the server (port 8040)
 	
 ## Use
 
-For information on the HyperCat APIs, refer to the HyperCat 2.0rc1 specification.
+For information on the Hypercat APIs, refer to the Hypercat 3.00rc1 specification.
 
-To fetch the root HyperCat
+To fetch the root Hypercat
 
 	curl http://127.0.0.1:8040/cat
 
-To fetch an external HyperCat
+To fetch an external Hypercat
 
 	curl http://127.0.0.1:8040/cat?url=http%3A%2F%2Ftopcat.1248.io%2Fcat
 
-Extra URL parameters may be added as specified in the HyperCat 2.0rc1 document, such as:
+Extra URL parameters may be added as specified in the Hypercat 2.0rc1 document, such as:
 
 	curl http://127.0.0.1:8040/cat?href=/suva
 

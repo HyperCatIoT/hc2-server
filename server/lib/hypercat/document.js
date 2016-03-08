@@ -10,7 +10,7 @@ var tlo = require('../core-utils/tlo'),
 
 module.exports = (function() {
     var documentSingleton,
-        exampleHyperCatKey = 'passkey',
+        exampleHypercatKey = 'passkey',
 
         document = function () {
             var documentObject = tlo({});
@@ -40,7 +40,7 @@ module.exports = (function() {
                 }
 
                 return new Promise(function(resolve, reject) {
-                    // Check if we want the example HyperCat, or if one is specified
+                    // Check if we want the example Hypercat, or if one is specified
                     if (url.isLocal) {
                         // Create the path to the local cat
                         examplePath = path.join(__dirname, '../' + url.url);
@@ -49,14 +49,14 @@ module.exports = (function() {
                         if (auth !== false) {
                             splitAuth = auth.split(':');
 
-                            if (splitAuth[0] === exampleHyperCatKey) {
+                            if (splitAuth[0] === exampleHypercatKey) {
                                 correctAuth = true;
                             }
                         } else {
                             correctAuth = true;
                         }
 
-                        // Local HyperCat
+                        // Local Hypercat
                         if (correctAuth) {
                             fs.readFile(examplePath, function(err, data) {
                                 if (!err) {
@@ -65,14 +65,14 @@ module.exports = (function() {
                                         params: args.params
                                     });
                                 } else {
-                                    reject('Error fetching HyperCat document');
+                                    reject('Error fetching Hypercat document');
                                 }
                             });
                         } else {
                             reject('Invalid authorization');
                         }
                     } else {
-                        // Get an external HyperCat
+                        // Get an external Hypercat
                         request({
                             method: 'GET',
                             url: url.url,
@@ -89,7 +89,7 @@ module.exports = (function() {
                                     reject('Error parsing JSON');
                                 }
                             } else {
-                                reject('Error fetching HyperCat document');
+                                reject('Error fetching Hypercat document');
                             }
                         });
                     }
@@ -268,7 +268,7 @@ module.exports = (function() {
                                 });
                             }
                         } else {
-                            reject('Error with HyperCat validating before saving');
+                            reject('Error with Hypercat validating before saving');
                         }
                     }
                 });

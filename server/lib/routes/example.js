@@ -17,7 +17,7 @@ module.exports = (function() {
 
                 app.get('/test', function(req, res) {
                     res.status(200).send({
-                        "item-metadata":[
+                        "catalogue-metadata":[
                             {
                                 "rel":"urn:X-hypercat:rels:isContentType",
                                 "val":"application/vnd.hypercat.catalogue+json"
@@ -30,7 +30,7 @@ module.exports = (function() {
                         "items":[
                             {
                                 "href":"/examples/sensors/powermonitor.json",
-                                "i-object-metadata":[
+                                "item-metadata":[
                                     {
                                         "rel":"urn:X-hypercat:rels:isContentType",
                                         "val":"application/vnd.hypercat.catalogue+json"
@@ -43,7 +43,7 @@ module.exports = (function() {
                             },
                             {
                                 "href":"/examples/sensors/temperaturemonitor.json",
-                                "i-object-metadata":[
+                                "item-metadata":[
                                     {
                                         "rel":"urn:X-hypercat:rels:isContentType",
                                         "val":"application/vnd.hypercat.catalogue+json"

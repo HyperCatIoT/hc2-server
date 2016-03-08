@@ -11,7 +11,7 @@ module.exports = (function() {
             var hypercatObject = tlo({});
 
             /**
-             * Check whether the given JSON is a valid HyperCat doc
+             * Check whether the given JSON is a valid Hypercat doc
              *
              * @param json
              * @returns {Promise}
@@ -19,15 +19,15 @@ module.exports = (function() {
             hypercatObject.checkValid = function(args) {
                 var json = args.document;
 
-                if (args.hasOwnProperty('item-metadata')) {
+                if (args.hasOwnProperty('catalogue-metadata')) {
                     json = args;
                 }
 
                 return new Promise(function(resolve, reject) {
                     // Do all of the basic checks on the JSON object
                     if ((json !== undefined) &&
-                        (json['item-metadata'] !== undefined) &&
-                        (json['item-metadata'].constructor === Array) &&
+                        (json['catalogue-metadata'] !== undefined) &&
+                        (json['catalogue-metadata'].constructor === Array) &&
                         (json.items !== undefined) &&
                         (json.items.constructor === Array)) {
                             return hypercatObject.checkIfItemsValid(json).then(function() {
@@ -41,7 +41,7 @@ module.exports = (function() {
                     }
 
                     // If any of the conditionals fail
-                    reject('Invalid HyperCat format');
+                    reject('Invalid Hypercat format (only Hypercat 3+ supported)');
                 });
             };
 
@@ -71,7 +71,7 @@ module.exports = (function() {
                     } else {
                         // Loop through items
                         for (i = 0; i < itemsArray.length; i += 1) {
-                            itemMetadata = itemsArray[i]['i-object-metadata'];
+                            itemMetadata = itemsArray[i]['item-metadata'];
                             if (itemMetadata !== undefined) {
                                 descriptionFound = false;
 
@@ -124,7 +124,7 @@ module.exports = (function() {
              * @returns {Promise}
              */
             hypercatObject.checkIfCatalog = function(json) {
-                var metadata = json['item-metadata'],
+                var metadata = json['catalogue-metadata'],
                     isCatalog = false,
                     isOldCatalog = false,
                     i;
@@ -146,16 +146,16 @@ module.exports = (function() {
                         resolve(json);
                     } else {
                         if (isOldCatalog) {
-                            reject('HyperCat document is an old format. Please update to V2');
+                            reject('Hypercat document is an old format. Please update to V2');
                         } else {
-                            reject('Document is not a catalog');
+                            reject('Document is not a catalogue');
                         }
                     }
                 });
             };
 
             /**
-             * Fetch a HyperCat document from a URL, this should be
+             * Fetch a Hypercat document from a URL, this should be
              * checked with checkValid() after retrieving
              *
              * @param url

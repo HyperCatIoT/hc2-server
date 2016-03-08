@@ -12,7 +12,7 @@ angular.module('hypercat.controllers')
             $scope.url = '';
             $scope.cat = null;
             $scope.blankItem = {
-                "i-object-metadata": [
+                "item-metadata": [
                     {
                         "val": "test",
                         "rel": ""
@@ -32,7 +32,7 @@ angular.module('hypercat.controllers')
 
             $scope.getCatMetadata = function() {
                 if ($scope.cat !== null) {
-                    return JSON.stringify($scope.cat['item-metadata'], null, "\t");
+                    return JSON.stringify($scope.cat['catalogue-metadata'], null, "\t");
                 }
                 return '';
             };
@@ -50,9 +50,9 @@ angular.module('hypercat.controllers')
                         if ((e.keyCode === 9) || (e.which === 9)) {
                             e.preventDefault();
                             s = this.selectionStart;
-                            this.value = this.value.substring(0, this.selectionStart) +
+                            this.value = this.value.prefix(0, this.selectionStart) +
                                 "\t" +
-                                this.value.substring(this.selectionEnd);
+                                this.value.prefix(this.selectionEnd);
                             this.selectionEnd = s + 1;
                         }
                     };

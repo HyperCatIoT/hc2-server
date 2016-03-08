@@ -25,7 +25,7 @@ describe("POST /cat", function() {
     before(function(done) {
         // Write a blank catalogue to use for next tests
         fs.writeFile(testFilePath, JSON.stringify({
-            "item-metadata": [
+            "catalogue-metadata": [
                 {
                     "val": "application/vnd.hypercat.catalogue+json",
                     "rel": "urn:X-hypercat:rels:isContentType"
@@ -53,7 +53,7 @@ describe("POST /cat", function() {
         return chai.request(settings.getBaseURL())
             .post(url)
             .send({
-                "i-object-metadata": [
+                "item-metadata": [
                     {
                         "val": "",
                         "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -79,7 +79,7 @@ describe("POST /cat", function() {
             });
     });
 
-    it("should return an 400 error with invalid HyperCat format", function() {
+    it("should return an 400 error with invalid Hypercat format", function() {
         return chai.request(settings.getBaseURL())
             .post(url)
             .send({
@@ -100,7 +100,7 @@ describe("POST /cat", function() {
         return chai.request(settings.getBaseURL())
             .post(url)
             .send({
-                "i-object-metadata": [
+                "item-metadata": [
                     {
                         "val": "",
                         "rel": "urn:X-hypercat:rels:hasDescription:en"
@@ -153,7 +153,7 @@ describe("PUT /cat", function() {
         return chai.request(settings.getBaseURL())
             .put(url + '&href=%2Ftest-href')
             .send({
-                "i-object-metadata": [
+                "item-metadata": [
                     {
                         "val": "",
                         "rel": "urn:X-hypercat:rels:hasDescription:en"

@@ -1,13 +1,13 @@
 <div class="hypercat-select">
-    <h4>HyperCat Selection</h4>
+    <h4>Hypercat Selection</h4>
     <form ng-submit="updateUrl()">
         <label>
             <input type="radio" name="catType" value="default" ng-model="catType" ng-change="updateUrl()">
-            <span>Example HyperCat</span>
+            <span>Example Hypercat</span>
         </label>
         <label>
             <input type="radio" name="catType" value="custom" ng-model="catType" ng-change="updateUrl()">
-            <span>My HyperCat</span><br>
+            <span>My Hypercat</span><br>
             <input type="text" size="40" placeholder="http://example.com/cat"
                    ng-model="customUrl"
                    ng-click="selectCustom()"

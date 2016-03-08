@@ -20,7 +20,7 @@ angular.module('hypercat.services')
                 };
 
             /**
-             * Construct the full HyperCat filtered URL depending on what is
+             * Construct the full Hypercat filtered URL depending on what is
              * currently in the currentUrl string, and currentFilters object
              *
              * @returns {string}

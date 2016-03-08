@@ -98,8 +98,8 @@ angular.module('hypercat.controllers')
                     // to notify the user about a map display
                     for (i = 0; i < data.items.length; i += 1) {
                         point = {};
-                        for (j = 0; j < data.items[i]['i-object-metadata'].length; j += 1) {
-                            meta = data.items[i]['i-object-metadata'][j];
+                        for (j = 0; j < data.items[i]['item-metadata'].length; j += 1) {
+                            meta = data.items[i]['item-metadata'][j];
 
                             if (meta.rel === 'http://www.w3.org/2003/01/geo/wgs84_pos#lat') {
                                 isGeo = true;

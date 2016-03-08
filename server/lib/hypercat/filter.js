@@ -12,7 +12,7 @@ module.exports = (function() {
             var filterObject = tlo({});
 
             // Add a prototype method to String allowing us to check
-            // whether a string begins with a specific substring
+            // whether a string begins with a specific prefix
             // I am disabling eslint to allow this prototype, as I am
             // doing a safety check to see if it exists, and the syntax
             // makes a lot of sense to use a prototype method
@@ -42,8 +42,8 @@ module.exports = (function() {
                 }
 
                 // Loop through the item's metadata
-                for (i = 0; i < item['i-object-metadata'].length; i += 1) {
-                    metadata = item['i-object-metadata'][i];
+                for (i = 0; i < item['item-metadata'].length; i += 1) {
+                    metadata = item['item-metadata'][i];
                     // Both rel and val needed
                     if (params.rel !== undefined && params.val !== undefined &&
                         (metadata.rel === params.rel) &&
@@ -72,15 +72,15 @@ module.exports = (function() {
              * @param params
              * @returns {boolean}
              */
-            filterObject.checkMetadataSubstring = function(item, params) {
+            filterObject.checkMetadataprefix = function(item, params) {
                 var i,
                     metadata,
                     matches = false;
 
                 // This just allows the shorter syntax for rel/val
                 params = params || {};
-                params.rel = params['substring-rel'];
-                params.val = params['substring-val'];
+                params.rel = params['prefix-rel'];
+                params.val = params['prefix-val'];
 
                 // If we are not checking either, it returns true
                 if (!params.rel && !params.val) {
@@ -88,8 +88,8 @@ module.exports = (function() {
                 }
 
                 // Loop through the item's metadata
-                for (i = 0; i < item['i-object-metadata'].length; i += 1) {
-                    metadata = item['i-object-metadata'][i];
+                for (i = 0; i < item['item-metadata'].length; i += 1) {
+                    metadata = item['item-metadata'][i];
                     // Both rel and val needed
                     if (params.rel !== undefined && params.val !== undefined &&
                         (metadata.rel.startsWith(params.rel)) &&
@@ -163,7 +163,7 @@ module.exports = (function() {
             };
 
 
-            filterObject.substringSearch = function(args) {
+            filterObject.prefixSearch = function(args) {
                 var filteredDocument = {},
                     doc = args.document,
                     params = args.params,
@@ -176,10 +176,10 @@ module.exports = (function() {
                 filteredDocument.items = [];
 
                 return new Promise(function(resolve, reject) {
-                    if ((params['substring-rel'] === undefined) &&
-                        (params['substring-val'] === undefined) &&
-                        (params['substring-href'] === undefined)) {
-                        reject('Using SubstringSearch with no substring defined');
+                    if ((params['prefix-rel'] === undefined) &&
+                        (params['prefix-val'] === undefined) &&
+                        (params['prefix-href'] === undefined)) {
+                        reject('Using prefixSearch with no prefix defined');
                     } else {
                         // Loop through all items
                         for (i = 0; i < doc.items.length; i += 1) {
@@ -187,9 +187,9 @@ module.exports = (function() {
                             item = doc.items[i];
 
                             // Check the rel and vals
-                            if (filterObject.checkMetadataSubstring(item, params)) {
-                                if (params['substring-href'] !== undefined) {
-                                    if (item.href.startsWith(params['substring-href'])) {
+                            if (filterObject.checkMetadataprefix(item, params)) {
+                                if (params['prefix-href'] !== undefined) {
+                                    if (item.href.startsWith(params['prefix-href'])) {
                                         found = true;
                                     }
                                 } else {
@@ -230,7 +230,7 @@ module.exports = (function() {
                     if ((params['lexrange-rel'] === undefined) &&
                         (params['lexrange-min'] === undefined) &&
                         (params['lexrange-max'] === undefined)) {
-                        reject('Using LexicographicSearch with no substring defined');
+                        reject('Using LexicographicSearch with no prefix defined');
                     } else {
                         if (params['lexrange-min'] !== undefined) {
                             min = String(params['lexrange-min']);
@@ -251,8 +251,8 @@ module.exports = (function() {
                                     matches = true;
                                 } else {
                                     // loop through the item's metadata
-                                    for (j = 0; j < item['i-object-metadata'].length; j += 1) {
-                                        meta = item['i-object-metadata'][j];
+                                    for (j = 0; j < item['item-metadata'].length; j += 1) {
+                                        meta = item['item-metadata'][j];
 
                                         // Check if we are doing the checks on the correct rel
                                         if (meta.rel === params['lexrange-rel']) {
@@ -335,8 +335,8 @@ module.exports = (function() {
                             point = {};
 
                             // Loop through the metadata
-                            for (j = 0; j < item['i-object-metadata'].length; j += 1) {
-                                meta = item['i-object-metadata'][j];
+                            for (j = 0; j < item['item-metadata'].length; j += 1) {
+                                meta = item['item-metadata'][j];
 
                                 if ((meta.rel === latRel) && (point.lat === undefined)) {
                                     point.lat = meta.val;
@@ -374,10 +374,10 @@ module.exports = (function() {
                     params.val !== undefined ||
                     params.href !== undefined) {
                         return filterObject.simpleSearch(args);
-                } else if (params['substring-rel'] !== undefined ||
-                    params['substring-val'] !== undefined ||
-                    params['substring-href'] !== undefined) {
-                        return filterObject.substringSearch(args);
+                } else if (params['prefix-rel'] !== undefined ||
+                    params['prefix-val'] !== undefined ||
+                    params['prefix-href'] !== undefined) {
+                        return filterObject.prefixSearch(args);
                 } else if (params['lexrange-rel'] !== undefined ||
                     params['lexrange-min'] !== undefined ||
                     params['lexrange-max'] !== undefined) {
